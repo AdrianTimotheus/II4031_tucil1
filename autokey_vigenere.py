@@ -8,8 +8,8 @@ class AutoKeyVigenere(Vigenere):
             sliced_string = self.input[0:len(self.input)-len(uppercase_key)]
             uppercase_key += sliced_string
             self.key = uppercase_key
-            print(self.input)
-            print(self.key)
+            # print(self.input)
+            # print(self.key)
 
         elif(len(self.input) == len(key)):
             pass
@@ -35,8 +35,8 @@ class AutoKeyVigenere(Vigenere):
                 # print(idxEncrypted)
             else:
                 idxKey = ord(self.output[i-key_length])-65
-                print(self.output[i-key_length],end='')
-                print(i-key_length)
+                # print(self.output[i-key_length],end='')
+                # print(i-key_length)
             
             charOutput = chr((idxEncrypted-idxKey) % 26 + 65)
 

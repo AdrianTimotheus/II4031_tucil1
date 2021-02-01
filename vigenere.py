@@ -3,7 +3,7 @@ from string import ascii_letters as ascii
 
 class Vigenere:
     def __init__(self):
-        self.table = [asciiUppercase[i:]+asciiUppercase[:i] for i in range(len(asciiUppercase))]
+        # self.table = [asciiUppercase[i:]+asciiUppercase[:i] for i in range(len(asciiUppercase))]
         self.key = ""
         self.input = ""
         self.output = ""
@@ -11,9 +11,9 @@ class Vigenere:
     def change_key(self,key):
         self.key = key
     
-    def printTable(self):
-        dummyvar = (self.table[0])
-        print(dummyvar[0])
+    # def printTable(self):
+    #     dummyvar = (self.table[0])
+    #     print(dummyvar[0])
 
     #membuat spasi setiap 5 huruf untuk enkripsi
     def add_space(self, input, length):
@@ -51,7 +51,7 @@ class Vigenere:
             # print(uppercase_key)
 
         elif(len(self.input) == len(key)):
-            pass
+            self.key = key
 
         else:
             sliced_string = key[0:len(self.input)-1]
