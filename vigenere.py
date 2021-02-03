@@ -28,6 +28,7 @@ class Vigenere:
     #buang semua karakter non alfabet termasuk spasi, simpan dalam sebuah string baru
     def format_input(self,input):
         uppercase_input = input.upper()
+        uppercase_input = uppercase_input.rstrip()
         for i in uppercase_input:
             if(ord(i)>=65 and ord(i)<=90):
                 self.input = self.input + i
@@ -41,6 +42,7 @@ class Vigenere:
     def adjust_key_length(self,key):
 
         uppercase_key = key.upper()
+        uppercase_key = uppercase_key.rstrip()
 
         # print("uppercase key: "+uppercase_key)
         # print(len(self.input))
@@ -87,6 +89,9 @@ class Vigenere:
         # print(self.input)
         # print(self.output)
         # print(self.key)
+
+    def getContent(self):
+        return (self.output)
 
     #fungsi enkripsi vigenere
     def encrypt(self,input,key):

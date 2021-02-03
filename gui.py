@@ -35,5 +35,11 @@ labelExtended = ttk.Label(tabExtendedVigenere,text="Extended Vigenere Cipher").g
 labelPlayfair = ttk.Label(tabPlayfair,text="Playfair Cipher").grid(column=0,row=0,padx=20,pady=20)
 labelAffine = ttk.Label(tabAffine,text="Affine Cipher").grid(column=0,row=0,padx=20,pady=20)
 
+Radiobutton(root,text="Vigenere",variable=choice,value="vigenere").pack(side="left")
+Radiobutton(root,text="Full",variable=choice,value="full").pack(side="left")
+Radiobutton(root,text="Autokey",variable=choice,value="autokey").pack(side="left")
+Radiobutton(root,text="Extended",variable=choice,value="vigenere").pack(side="left")
+Radiobutton(root,text="Playfair",variable=choice,value="full").pack(side="left")
+
 mainwindow.mainloop()
 
