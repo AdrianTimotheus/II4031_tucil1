@@ -3,6 +3,7 @@ from vigenere import Vigenere
 class AutoKeyVigenere(Vigenere):
     def adjust_key_length(self,key):
         uppercase_key = key.upper()
+        uppercase_key = uppercase_key.rstrip()
 
         if(len(self.input) > len(uppercase_key)):
             sliced_string = self.input[0:len(self.input)-len(uppercase_key)]
@@ -46,7 +47,8 @@ class AutoKeyVigenere(Vigenere):
     def decrypt(self, input, key):
         self.clear_all()
         self.format_input(input)
-        self.key=key
+        uppercase_key = key.upper()
+        self.key = uppercase_key.rstrip()
         self.change_character_reversed()
         self.display()
         

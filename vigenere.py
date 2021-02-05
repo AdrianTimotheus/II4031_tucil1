@@ -52,12 +52,15 @@ class Vigenere:
             self.key = self.repeat_to_length(uppercase_key,len(self.input))
             # print(uppercase_key)
 
-        elif(len(self.input) == len(key)):
-            self.key = key
+        elif(len(self.input) == len(uppercase_key)):
+            self.key = uppercase_key
+            # print("masuk elif")
 
         else:
-            sliced_string = key[0:len(self.input)-1]
+            sliced_string = uppercase_key[0:len(self.input)]
+            print(sliced_string)
             self.change_key(sliced_string)
+            # print("masuk else")
 
     #mengubah karakter semula menjadi karakter yang sudah terenkripsi
     def change_character(self):
@@ -85,7 +88,7 @@ class Vigenere:
     #tampilkan ke command prompt
     def display(self):
         temp_output = self.add_space(self.output,5)
-        print(temp_output)
+        # print(temp_output)
         # print(self.input)
         # print(self.output)
         # print(self.key)

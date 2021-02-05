@@ -8,6 +8,9 @@ class Playfair:
         self.keytable = []
         self.bigram = []
 
+    def add_space(self, input, length):
+        return ' '.join(input[i:i+length] for i in range(0,len(input),length))
+
     # def get_distinct_character(self,key):
     #     uppercase_key = key.upper()
 
@@ -38,8 +41,10 @@ class Playfair:
 
     def turn_key_into_matrix(self,key):
         uppercase_key = key.upper()
+        uppercase_key = uppercase_key.rstrip()
         # print(uppercase_key)
         self.key = uppercase_key.replace("J", "")
+        self.key = self.key.replace(" ","")
         # print(self.key)
         alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ" # note no J
 
@@ -56,6 +61,7 @@ class Playfair:
 
         #filter input only alphabet
         uppercase_input = input.upper()
+        uppercase_input = uppercase_input.rstrip()
         for i in uppercase_input:
             if(ord(i)>=65 and ord(i)<=90):
                 self.input = self.input + i
@@ -140,6 +146,8 @@ class Playfair:
 
             self.output += first_character
             self.output += second_character
+
+        self.output = self.output.replace("X","")
 
 
 
